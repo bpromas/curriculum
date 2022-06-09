@@ -98,7 +98,13 @@ end
 transaction_statement do |transaction|
   p "%0.2f" % transaction # The bank that calls the method can define how it is handled.
 end
-#=> ["10.00", "-15.00", "25.00", "30.00", "-24.00", "-70.00", "999.00"]
+#=> "10.00"
+#=> "-15.00"
+#=> "25.00"
+#=> "30.00"
+#=> "-24.00"
+#=> "-70.00"
+#=> "999.00"
 ~~~
 
 If another bank wanted to print their transactions another way it's no problem, they can supply their own block.
@@ -117,7 +123,13 @@ end
 transaction_statement do |transaction|
   "%0.2f" % transaction
 end
-#=> ["10.00", "-15.00", "25.00", "30.00", "-24.00", "-70.00", "999.00"]
+#=> "10.00"
+#=> "-15.00"
+#=> "25.00"
+#=> "30.00"
+#=> "-24.00"
+#=> "-70.00"
+#=> "999.00"
 ~~~
 
 <span id="collect-return">If you want to gather the value returned from the block, you can just assign it to a variable or collect it in a data structure.</span>
